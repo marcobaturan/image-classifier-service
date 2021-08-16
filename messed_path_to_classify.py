@@ -84,7 +84,7 @@ os.makedirs(out_path, exist_ok=True)
 # list of images to process
 filenamelist = [];
 for extension in filetype:
-	filenamelist += glob.glob(path_to_classify+'/**/*.'+extension, recursive=True) 
+    filenamelist += glob.glob(path_to_classify+'/**/*.'+extension, recursive=True) 
 
 # progress parameters initialized
 imax = len(filenamelist)
@@ -102,7 +102,7 @@ for filename in filenamelist:
 
     # use artificial intelligence algorithm
     print(os.path.dirname(__file__)) 
-    cmd = 'python3.5 '+os.path.dirname(os.path.abspath(__file__))+'/classify_image.py --model_dir '+os.path.dirname(os.path.abspath(__file__))+'/imagenet'+' --image_file '+'%r' %path_to_classify +'/' +'%r' % image
+    cmd = 'python3.9 '+os.path.dirname(os.path.abspath(__file__))+'/classify_image.py --model_dir '+os.path.dirname(os.path.abspath(__file__))+'/imagenet'+' --image_file '+'%r' %path_to_classify +'/' +'%r' % image
     p = subprocess.Popen(cmd, stdout=subprocess.PIPE, shell=True)
     out, err = p.communicate()
 

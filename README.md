@@ -1,5 +1,8 @@
 # Image classification as a service
 
+> This is a actuallization for python3.9 and Tensorflow 2.x for 
+> The original code is: https://github.com/marcobaturan/Image-classification-from-mess-folder-to-ordered-folder
+
 I have a folder where I put all my cambridge holidays pictures... I would love to sort by topics my pictures of my holidays in Cambridge.
 
 ![messed_path](assets/image/cambridge_mess.png)
@@ -17,7 +20,7 @@ Oh dear god ! My computer analysed my pictures and recognized on its own all the
 ## Example
 With this command line, I am now able to sort my pictures by topics as above
 ```
-python3.5 messed_path_to_classify.py --out_path ./example/sorted ./example/cambridge
+python3.9 messed_path_to_classify.py --out_path ./example/sorted ./example/cambridge
 ```
 _____
 ## Installation
@@ -28,7 +31,7 @@ This code needs python3 and TensorFlow to work.
 - Install python3 :
 
 ```sh
-sudo apt-get install python3
+sudo apt-get install python3.9
 ```
 
 - Install TensorFlow :
@@ -49,7 +52,7 @@ sudo pip3 install --upgrade <link>
 ### Get the code
 Once you have fill the requirements, you need to clone the repository :
 ```
-git clone https://github.com/Tofull/image-classifier-service
+git clone https://github.com/marcobaturan/Image-classification-from-mess-folder-to-ordered-folder
 cd image-classifier-service
 ```
 
@@ -61,6 +64,20 @@ chmod +x ./alias.sh
 ./alias.sh
 ```
 You could now use ```classify_path``` to call the script. Easier and faster.
+
+### Create virtual environment
+
+```
+virtualenv env --python=python3.9
+
+source env/bin/activate
+```
+
+### Install libraries from requirements
+
+```
+pip install -r requirements.txt
+```
 
 Now have fun and classify your folder !
 _____
@@ -87,25 +104,3 @@ _____
 - Label image with deep learning
 - Create folder corresponding to the Label
 - Copy the image into the right path
-
-_____
-# TODO :
-
-- [x] Check if the code is working on Ubuntu 16
-- [x] Update installation part of the documentation
-- [ ] Upgrade the code with the new tensorflow API : Op BatchNormWithGlobalNormalization is deprecated. It will cease to work in GraphDef version 9. Use tf.nn.batch_normalization()
-- [ ] Try with GPU tensorflow
-- [ ] Add *png* format use case (png decoder)
-- [ ] Parallelize image recognition (check with openMP ?)
-- [ ] Build a dockerfile to transform the script as a service
-- [ ] Learn how to generate the model with my own data
-- [ ] Create a responsive interface website (hosting the service) for no-computer-friendly people who want to sort their holiday pictures
-- [x] Keep playing with Tensorflow
-- [x] :star: **Star the github repository**
-- [x] Talk about this service to attract developers to contribute
-- [ ] Revise this todo list
-
-_____
-## Contributions
-*messed_path_to_classify.py* has been created by Loic MESSAL (Student at the French National School of Geomatics).  
-24 March 2016
